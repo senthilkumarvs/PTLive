@@ -1,0 +1,201 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageAdmin.master.cs" Inherits="ProfitTrader.Admin.MasterPageAdmin" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/images/fav.png">
+    <title>Admin</title>
+    <link rel="stylesheet" href="assets/css/vendor.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="page-user">
+    <!--*******************
+        Preloader start
+    ********************-->
+    <form id="f2" runat="server" autocomplete="off">
+        <div class="topbar-wrap">
+            <div class="topbar is-sticky">
+                <div class="container">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <ul class="topbar-nav d-lg-none">
+                            <li class="topbar-nav-item relative"><a class="toggle-nav" href="#">
+                                <div class="toggle-icon"><span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span></div>
+                            </a></li>
+                        </ul>
+                        <a class="topbar-logo" href="#">
+                            <img src="assets/images/logo.png" alt="logo"></a>
+                        <ul class="topbar-nav">
+                            <li class="topbar-nav-item relative"><span class="user-welcome d-none d-lg-inline-block">Admin</span><a class="toggle-tigger user-thumb" href="#"><em class="fa fa-user"></em></a>
+                                <div class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
+
+                                    <ul class="user-links bg-light">
+                                        <li><a href="../AdminLogin.aspx"><i class="fal fa-power-off"></i>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="container">
+                    <div class="navbar-innr">
+                        <ul class="navbar-menu">
+                            <li><a href="home.aspx"><em class="fa fa-home ava_s_nava_li_ico"></em>Dashboard</a></li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-money-bill "></em>OTT</a>
+                                <ul class="navbar-dropdown">
+                                    <%--<li><a href="OTTCommission.aspx">OTT Commission</a></li>--%>
+                                    <li><a href="OttSubscriptionMaster.aspx">OTT Subscription</a></li>
+                                    <li><a href="OttProviderMaster.aspx">OTT Providers</a></li>
+                                    <li><a href="OttProviderSubscription.aspx">OTT Providers Details</a></li>
+                                    <li><a href="OttActivationDetails.aspx">Ott Activation Details</a></li>
+                                    <li><a href="OttManualActivation.aspx">Ott Manual Activation</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-robot "></em>Bot</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="BotProduct.aspx">Bot Product</a></li>
+                                    <li><a href="BotApproval.aspx">Bot Approval</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-video "></em>Own Products</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="Category.aspx">Category</a></li>
+                                    <li><a href="SubCategory.aspx">Sub Category</a></li>
+                                    <li><a href="OwnProduct.aspx">Own Products</a></li>
+                                    <li><a href="GoldInvestment.aspx">Gold Investment</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-wallet "></em>Wallet</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="AdvertismentPost.aspx">Advertisement Post</a></li>
+                                    <%-- <li><a href="Product.aspx">Product</a></li>
+                                    <li><a href="ProductInvestment.aspx">Product Investment</a></li>--%>
+                                    <li><a href="Registration.aspx">Customer Update</a></li>
+                                    <li><a href="PudhukadaiWalletAddFund.aspx">Pudhukadai Wallet</a></li>
+                                    <li><a href="ReturnsWalletAddFund.aspx">Returns Wallet</a></li>
+                                    <li><a href="FundAddRemove.aspx">Customer Wallet</a></li>
+                                    <li><a href="ActivationWalletAddFund.aspx">Activation Wallet</a></li>
+                                    <li><a href="WithdrawalWallet.aspx">Withdrawal Wallet</a></li>
+                                    <%--<li><a href="AdminWalletAddFund.aspx">Admin Wallet</a></li>--%>
+                                    <li><a href="EPinRequestApprove.aspx">Wallet Request</a></li>
+                                    <li><a href="RequestPinDetails.aspx">Wallet Request History</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-money-bill"></em>Payout</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="CommissionGenerate.aspx">Commission Generate</a></li>
+                                    <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#">Payment Request</a>
+                                        <ul class="navbar-dropdown">
+                                            <li><a href="PaymentRequest.aspx">Payment Request</a></li>
+                                            <li><a href="PaymentRequestDetails.aspx">Payment Request Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#">Returns Wallet</a>
+                                        <ul class="navbar-dropdown">
+                                            <li><a href="PudhukadaiToReturnWallet.aspx">Returns Wallet Generate</a></li>
+                                            <li><a href="ReturnsWalletPayout.aspx">Returns Wallet Payout</a></li>
+                                        </ul>
+                                    </li>                                    
+                                    <li><a href="WeeklyPayoutView.aspx">Withdrawal Payout</a></li>
+                                    <li><a href="GroupTradingPayout.aspx">Group Trading Payout</a></li>
+                                    <li><a href="BinaryCutoff.aspx">Binary Cutoff</a></li>
+                                    <li><a href="AdvertisementCutoff.aspx">Advertisement Cutoff</a></li>
+                                    <li><a href="RoiIncome.aspx">Roi Income</a></li>
+                                    <li><a href="RptSponsorIncome.aspx">Direct Referral Income</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-users"></em>BDC</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="Projects.aspx">Projects</a></li>
+                                    <li><a href="BdcRegistration.aspx">BDC Registration</a></li>
+                                    <li><a href="BdcAddFund.aspx">Bdc Wallet</a></li>
+                                    <li><a href="BdcPanel.aspx">Bdc Login</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-handshake "></em>Team</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="AutoFillingReport.aspx">Auto Filling</a></li>
+                                    <li><a href="Genealogy.aspx">Genealogy</a></li>
+                                    <li><a href="UserBusinessList.aspx">Business List</a></li>
+                                    <li><a href="LevelReport.aspx">Level Tree</a></li>
+                                    <li><a href="ContestMatching.aspx">Contest Matching</a></li>
+                                    <li><a href="AwardsandRewardsEligible.aspx">Awards and Rewards</a></li>
+                                    <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#">Income</a>
+                                        <ul class="navbar-dropdown">
+                                            <li><a href="IncomeWalletDetails.aspx">Income Wallet</a></li>
+                                            <li><a href="InvestmentWalletDetails.aspx">Investment Wallet</a></li>
+                                            <li><a href="WithdrawalReport.aspx">Withdrawal Wallet</a></li>
+                                            <li><a href="ActivationDetails.aspx">Activation Wallet</a></li>
+                                            <li><a href="OttWalletDetails.aspx">Ott Wallet</a></li>
+                                            <li><a href="AutoFillingWalletReport.aspx">Auto Filling Wallet</a></li>
+                                            <li><a href="AdminWalletReport.aspx">Admin Wallet Report</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-handshake "></em>Reports</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="CustomerLogin.aspx">Customer Login</a></li>
+                                    <li><a href="Customerlist.aspx">Customer List</a></li>
+                                    <li><a href="SponsorRpt.aspx">Referral Details</a></li>
+                                    <li><a href="dailyBusinessDetails.aspx">Business Details</a></li>
+                                    <li><a href="Rpt_Topupdetails.aspx">Topup Details</a></li>
+                                    <li><a href="MoneyRemittanceDetails.aspx">Money Remittance Details</a></li>
+                                    <li><a href="Recharge Details.aspx">Recharge Details</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown page-links-all"><a class="drop-toggle" href="#"><em class="ava_s_nava_li_ico fa fa-key "></em>My Account</a>
+                                <ul class="navbar-dropdown">
+                                    <li><a href="ChangePassword.aspx">Change Password</a> </li>
+                                    <li><a href="../AdminLogin.aspx">Logout</a> </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content ava_s_pg_cnt">
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bar">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <div class="copyright-text">Copyrights 2022 @ All Rights Reserved</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jquery.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script>
+            $(function () {
+                "use strict";
+                $(".datepicker").datepicker({
+                    autoclose: true,
+                    todayHighlight: true,
+                    format: 'dd-mm-yyyy'
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>
